@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 
 class EskulController extends Controller
 {
-
     public function eskul(){
         $eskul = DB::table('eskuls')->get();
         return view('eskul', ['eskul' => $eskul]);
@@ -45,5 +44,9 @@ class EskulController extends Controller
         // return view('eskul_tambah');
         DB::table('eskuls')->where('id', $id)->delete();
         return redirect('eskul')->with('status','Data berhasil diedit');
+    }
+
+    public function layout(){
+        return view('layouts/main');
     }
 }

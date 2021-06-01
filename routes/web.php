@@ -27,3 +27,6 @@ Route::post('/eskul/update', 'EskulController@update');
 Route::get('/eskul/hapus/{id}', 'EskulController@eskulHapus');
 
 
+Route::get('/layout', 'EskulController@layout');
+
+
