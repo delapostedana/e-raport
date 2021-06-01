@@ -9,28 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>E-Raport</title>
-    <!-- Favicon icon -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
-    <!-- chartist CSS -->
-    <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    {{--  Favicon icon   --}}
+    <link rel="icon" type="image/png" sizes="16x16" href=" {{ asset('/assets/images/favicon.png') }}">
+    {{--  chartist CSS   --}}
+    <link href="{{asset('/assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/plugins/chartist-js/dist/chartist-init.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
     <!--This page css - Morris CSS -->
-    <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <link href="{{asset('/assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.min.css" rel="stylesheet">
+    {{--  <link href="{{asset('html/css/style.min.css')}}" rel="stylesheet">  --}}
+    <link href="{{asset('html/css/css.css')}}" rel="stylesheet">
 </head>
 
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
+
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -103,7 +99,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#"
                                 id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Bang Imron
+                                <img src="{{ asset('/assets/images/users/1.jpg') }}" alt="user" class="profile-pic me-2">Bang Imron
                             </a>
                             <div class="dropdown-menu dropdown-menu-end user-dd animated flipInY">
                                 <div class="d-flex no-block align-items-center p-3 bg-info text-white mb-2">
@@ -686,26 +682,26 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('/assets/plugins/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
+    <script src="{{asset('/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/app-style-switcher.js')}}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{asset('js/waves.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{{asset('js/sidebarmenu.js')}}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!-- chartist chart -->
-    <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{asset('/assets/plugins/chartist-js/dist/chartist.min.js')}}"></script>
+    <script src="{{asset('/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js')}}"></script>
     <!--c3 JavaScript -->
-    <script src="../assets/plugins/d3/d3.min.js"></script>
-    <script src="../assets/plugins/c3-master/c3.min.js"></script>
+    <script src="{{asset('/assets/plugins/d3/d3.min.js')}}"></script>
+    <script src="{{asset('/assets/plugins/c3-master/c3.min.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="js/pages/dashboards/dashboard1.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{asset('js/pages/dashboards/dashboard1.js')}}"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
 </body>
 
 </html>
