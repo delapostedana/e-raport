@@ -43,7 +43,7 @@ class EskulController extends Controller
     public function eskulHapus($id){
         // return view('eskul_tambah');
         DB::table('eskuls')->where('id', $id)->delete();
-        return redirect('eskul')->with('status','Data berhasil diedit');
+        return redirect('eskul')->with('status','Data berhasil dihapus');
     }
 
     public function layout(){

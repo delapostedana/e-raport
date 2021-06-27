@@ -13504,7 +13504,8 @@ select.form-select.form-control-line {
 }
 
 .sidebar-nav ul .sidebar-item .first-level {
-    padding: 0 0 10px 0
+    margin-left: 10px;
+    padding: 0 0 0 0
 }
 
 .sidebar-nav ul .sidebar-item .first-level .sidebar-item.active .sidebar-link {
@@ -13512,7 +13513,7 @@ select.form-select.form-control-line {
 }
 
 .sidebar-nav ul .sidebar-item .first-level .sidebar-item .sidebar-link {
-    padding: 10px 15px
+    padding: 5px 5px
 }
 
 .sidebar-nav ul .sidebar-item .first-level .sidebar-item .sidebar-link i {
@@ -13566,9 +13567,9 @@ select.form-select.form-control-line {
 }
 
 .sidebar-nav .has-arrow:after {
-    position: absolute;
+    /* position: absolute;
     content: "";
-    width: 7px;
+    width: .55;
     height: 7px;
     border-width: 1px 0 0 1px;
     border-style: solid;
@@ -13584,7 +13585,19 @@ select.form-select.form-control-line {
     right: 15px;
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out
+    transition: all 0.3s ease-out */
+    position: absolute;
+    content: '';
+    width: .55em;
+    height: .55em;
+    margin-left: 10px;
+    top: 20px;
+    right: 15px;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: #fff;
+    transform-origin: top;
+    transition: all .3s ease-out;
 }
 
 .sidebar-nav .has-arrow[aria-expanded=true]:after,

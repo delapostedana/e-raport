@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>E-Raport</title>
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, materialpro admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, materialpro admin lite design, materialpro admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Material Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Material Pro Lite Template by WrapPixel</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
     <!-- Favicon icon -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- chartist CSS -->
     <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
@@ -46,17 +51,17 @@
                     <!-- ============================================================== -->
                     <a class="navbar-brand ms-4" href="index.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon text-white">
+                        <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <i class="mdi me-2 mdi-book-open-variant"></i>
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span class="logo-text text-white">
-                            e-<b>Raport</b>
+                        <span class="logo-text">
                             <!-- dark Logo text -->
-                            <!-- <img src="../assets/images/logo-light-text.png" alt="homepage" class="dark-logo" /> -->
+                            <img src="../assets/images/logo-light-text.png" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -88,7 +93,10 @@
                         <!-- ============================================================== -->
 
                         <li class="nav-item search-box">
-
+                            <a class="nav-link text-muted" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                                    class="srh-btn"><i class="ti-close"></i></a> </form>
                         </li>
                     </ul>
 
@@ -100,39 +108,30 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#"
-                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Bang Imron
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../assets/images/users/1.jpg" alt="user" width="30" class="profile-pic rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end user-dd animated flipInY">
                                 <div class="d-flex no-block align-items-center p-3 bg-info text-white mb-2">
-                                    <div class=""><img src="../assets/images/users/1.jpg" alt="user"
-                                            class="rounded-circle" width="60"></div>
+                                    <div class=""><img src="../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="60"></div>
                                     <div class="ms-2">
-                                        <h4 class="mb-0 text-white">Bang Imron</h4>
-                                        <p class=" mb-0">Admin</p>
+                                        <h4 class="mb-0 text-white">Steave Jobs</h4>
+                                        <p class=" mb-0">varun@gmail.com</p>
                                     </div>
                                 </div>
-                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-user feather-sm text-info me-1 ms-1">
-                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg> My
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user feather-sm text-info me-1 ms-1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My
                                     Profile</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card feather-sm text-info me-1 ms-1"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                    My Balance</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail feather-sm text-success me-1 ms-1"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    Inbox</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-log-out feather-sm text-danger me-1 ms-1">
-                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                        <polyline points="16 17 21 12 16 7"></polyline>
-                                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                                    </svg> Logout</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings feather-sm text-warning me-1 ms-1"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                    Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <div class="pl-4 p-2"><a href="#" class="btn d-block w-100 btn-info rounded-pill">View
-                                        Profile</a></div>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out feather-sm text-danger me-1 ms-1"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="pl-4 p-2"><a href="#" class="btn d-block w-100 btn-info rounded-pill">View Profile</a></div>
                             </div>
                         </li>
                     </ul>
@@ -160,42 +159,21 @@
                                 <i class="mdi me-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-blank.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-book-open-variant"></i><span class="hide-menu">User</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i
-                                    class="mdi mdi-content-copy"></i><span class="hide-menu">Kategori Penilaian
-                                </span></a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item"><a href="layout-inner-fixed-left-sidebar.html"
-                                        class="sidebar-link"><span class="hide-menu"> Eskul </span></a></li>
-                                <li class="sidebar-item"><a href="layout-inner-fixed-right-sidebar.html"
-                                        class="sidebar-link"><span class="hide-menu"> Hafalan </span></a></li>
-                                <li class="sidebar-item"><a href="layout-inner-left-sidebar.html"
-                                        class="sidebar-link"><span class="hide-menu"> Perkembangan </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.html" aria-expanded="false"><i class="mdi me-2 mdi-table"></i><span
-                                    class="hide-menu">Kelas</span></a></li>
+                                    class="hide-menu">Table</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="icon-material.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Guru</span></a></li>
+                                    class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Icon</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="map-google.html" aria-expanded="false"><i class="mdi me-2 mdi-earth"></i><span
-                                    class="hide-menu">Peserta Didik</span></a></li>
+                                    class="hide-menu">Google Map</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-help-circle"></i><span class="hide-menu">Input Raport</span></a>
+                                href="pages-blank.html" aria-expanded="false"><i
+                                    class="mdi me-2 mdi-book-open-variant"></i><span class="hide-menu">Blank</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-help-circle"></i><span class="hide-menu">Laporan</span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-help-circle"></i><span class="hide-menu">Lihat Raport</span></a>
+                                href="pages-error-404.html" aria-expanded="false"><i class="mdi me-2 mdi-help-circle"></i><span
+                                    class="hide-menu">Error 404</span></a>
                         </li>
                     </ul>
 
@@ -205,23 +183,20 @@
             <!-- End Sidebar scroll-->
             <div class="sidebar-footer">
                 <div class="row">
-                    <div class="col-12 link-wrap">
-
-                        Bang Imron <br>
-                        Admin
+                    <div class="col-4 link-wrap">
                         <!-- item-->
-                        <!-- <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i
+                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i
                                 class="ti-settings"></i></a>
                     </div>
-                    <div class="col-4 link-wrap"> -->
+                    <div class="col-4 link-wrap">
                         <!-- item-->
-                        <!-- <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i
+                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i
                                 class="mdi mdi-gmail"></i></a>
                     </div>
-                    <div class="col-4 link-wrap"> -->
+                    <div class="col-4 link-wrap">
                         <!-- item-->
-                        <!-- <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
-                                class="mdi mdi-power"></i></a> -->
+                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
+                                class="mdi mdi-power"></i></a>
                     </div>
                 </div>
             </div>
@@ -248,8 +223,6 @@
                                 </ol>
                             </nav>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
                     </div>
                 </div>
             </div>
@@ -567,29 +540,25 @@
                                         <div class="progress">
                                             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80"
                                                 aria-valuemin="0" aria-valuemax="100" style="width:80%; height:6px;">
-                                                <span class="sr-only">50% Complete</span>
-                                            </div>
+                                                <span class="sr-only">50% Complete</span> </div>
                                         </div>
                                         <h5 class="d-flex mt-4">HTML 5 <span class="ms-auto">90%</span></h5>
                                         <div class="progress">
                                             <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90"
                                                 aria-valuemin="0" aria-valuemax="100" style="width:90%; height:6px;">
-                                                <span class="sr-only">50% Complete</span>
-                                            </div>
+                                                <span class="sr-only">50% Complete</span> </div>
                                         </div>
                                         <h5 class="d-flex mt-4">jQuery <span class="ms-auto">50%</span></h5>
                                         <div class="progress">
                                             <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
                                                 aria-valuemin="0" aria-valuemax="100" style="width:50%; height:6px;">
-                                                <span class="sr-only">50% Complete</span>
-                                            </div>
+                                                <span class="sr-only">50% Complete</span> </div>
                                         </div>
                                         <h5 class="d-flex mt-4">Photoshop <span class="ms-auto">70%</span></h5>
                                         <div class="progress">
                                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70"
                                                 aria-valuemin="0" aria-valuemax="100" style="width:70%; height:6px;">
-                                                <span class="sr-only">50% Complete</span>
-                                            </div>
+                                                <span class="sr-only">50% Complete</span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -635,8 +604,7 @@
                                             <div class="form-group">
                                                 <label class="col-sm-12">Select Country</label>
                                                 <div class="col-sm-12 border-bottom">
-                                                    <select
-                                                        class="form-select shadow-none border-0 form-control-line ps-0">
+                                                    <select class="form-select shadow-none border-0 form-control-line ps-0">
                                                         <option>London</option>
                                                         <option>India</option>
                                                         <option>Usa</option>
@@ -661,7 +629,7 @@
                 <!-- Table -->
                 <!-- ============================================================== -->
 
-
+                
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
