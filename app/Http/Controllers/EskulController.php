@@ -12,11 +12,11 @@ class EskulController extends Controller
 {
     public function eskul(){
         $eskul = DB::table('eskuls')->get();
-        return view('eskul', ['eskul' => $eskul]);
+        return view('eskul/eskul', ['eskul' => $eskul]);
     }
 
     public function eskulTambah(){
-        return view('eskul_tambah');
+        return view('eskul/eskul_tambah');
     }
 
     public function prosesTambah(Request $request){
@@ -29,11 +29,10 @@ class EskulController extends Controller
 
     public function eskulEdit($id){
         $eskul = DB::table('eskuls')->where('id',$id)->get();
-        return view( 'eskul_edit', ['eskul' => $eskul] );
+        return view( 'eskul/eskul_edit', ['eskul' => $eskul] );
     }
 
     public function update(Request $request){
-        // return view('eskul_tambah');
         DB::table('eskuls')->where('id', $request->id)->update(
             ['nama' => $request->nama]
         );
@@ -44,9 +43,5 @@ class EskulController extends Controller
         // return view('eskul_tambah');
         DB::table('eskuls')->where('id', $id)->delete();
         return redirect('eskul')->with('status','Data berhasil dihapus');
-    }
-
-    public function layout(){
-        return view('layouts/main');
     }
 }

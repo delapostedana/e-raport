@@ -26,7 +26,12 @@ Route::get('/eskul/edit/{id}', 'EskulController@eskulEdit');
 Route::post('/eskul/update', 'EskulController@update');
 Route::get('/eskul/hapus/{id}', 'EskulController@eskulHapus');
 
+Route::get('/hafalan', 'HafalanController@hafalan');
+Route::get('/hafalan/add', 'HafalanController@hafalanTambah');
+Route::post('/proses', 'HafalanController@prosesTambah');
+Route::get('/hafalan/edit/{id}', 'HafalanController@hafalanEdit');
+Route::post('/hafalan/update', 'HafalanController@update');
+Route::get('/hafalan/hapus/{id}', 'HafalanController@hafalanHapus');
 
-Route::get('/layout', 'EskulController@layout');
 
 
