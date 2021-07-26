@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class perkembangan_detail extends Model
+class Perkembangan_detail extends Model
 {
     //
 }

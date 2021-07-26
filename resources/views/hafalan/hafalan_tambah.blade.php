@@ -16,7 +16,7 @@
     <div class="col-sm-12">
         <div class="card-body">
             <h3 class="mb-4" style="color: #54667a"><i class="mdi me-2 mdi-file"></i> Form Tambah Hafalan</h3>
-            <form method="post" action="{{ url('proses') }}">
+            <form method="post" action="{{ url('hafalan/proses') }}">
                 @csrf
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control border border-info" placeholder="Nama hafalan" name="nama"

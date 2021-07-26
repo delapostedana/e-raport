@@ -177,14 +177,14 @@
                                     class="hide-menu">Kategori Penilaian
                                 </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item"><a href="layout-inner-fixed-left-sidebar.html"
+                                <li class="sidebar-item"><a href="{{ route('eskul') }}"
                                         class="sidebar-link"><span class="hide-menu"><i
                                                 class="mdi me-2 mdi-arrow-right-bold-circle"></i> Eskul </span></a></li>
-                                <li class="sidebar-item"><a href="layout-inner-fixed-right-sidebar.html"
+                                <li class="sidebar-item"><a href="{{ route('hafalan') }}"
                                         class="sidebar-link"><span class="hide-menu"><i
                                                 class="mdi me-2 mdi-arrow-right-bold-circle"></i> Hafalan </span></a>
                                 </li>
-                                <li class="sidebar-item"><a href="layout-inner-left-sidebar.html"
+                                <li class="sidebar-item"><a href="{{ route('perkembangan') }}"
                                         class="sidebar-link"><span class="hide-menu"><i
                                                 class="mdi me-2 mdi-arrow-right-bold-circle"></i> Perkembangan
                                         </span></a></li>
@@ -192,13 +192,13 @@
                         </li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="table-basic.html" aria-expanded="false"><i class="mdi me-2 mdi-cast"></i><span
+                                href="{{ route('kelas') }}" aria-expanded="false"><i class="mdi me-2 mdi-cast"></i><span
                                     class="hide-menu">Kelas</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-material.html" aria-expanded="false"><i
+                                href="{{ route('guru') }}" aria-expanded="false"><i
                                     class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Guru</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="map-google.html" aria-expanded="false"><i class="mdi me-2 mdi-face"></i><span
+                                href="{{ route('siswa') }}" aria-expanded="false"><i class="mdi me-2 mdi-face"></i><span
                                     class="hide-menu">Peserta Didik</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-error-404.html" aria-expanded="false"><i

@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 class EskulController extends Controller
 {
     public function eskul(){
+        // $eskul = Eskul::all();
         $eskul = DB::table('eskuls')->get();
         return view('eskul/eskul', ['eskul' => $eskul]);
     }
