@@ -168,9 +168,23 @@
                                 href="pages-profile.html" aria-expanded="false">
                                 <i class="mdi me-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-blank.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-account-plus"></i><span class="hide-menu">User</span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi me-2 mdi-account-plus"></i><span
+                                    class="hide-menu">Tambah User
+                                </span></a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item"><a href="{{ route('admin') }}"
+                                        class="sidebar-link"><span class="hide-menu"><i
+                                                class="mdi me-2 mdi-arrow-right-bold-circle"></i> Admin </span></a></li>
+                                <li class="sidebar-item"><a href="{{ route('guru') }}"
+                                        class="sidebar-link"><span class="hide-menu"><i
+                                                class="mdi me-2 mdi-arrow-right-bold-circle"></i> Guru </span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="{{ route('siswa') }}"
+                                        class="sidebar-link"><span class="hide-menu"><i
+                                                class="mdi me-2 mdi-arrow-right-bold-circle"></i> Peserta Didik
+                                        </span></a></li>
+                            </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book"></i><span
@@ -194,12 +208,12 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('kelas') }}" aria-expanded="false"><i class="mdi me-2 mdi-cast"></i><span
                                     class="hide-menu">Kelas</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('guru') }}" aria-expanded="false"><i
                                     class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Guru</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('siswa') }}" aria-expanded="false"><i class="mdi me-2 mdi-face"></i><span
-                                    class="hide-menu">Peserta Didik</span></a></li>
+                                    class="hide-menu">Peserta Didik</span></a></li> -->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-error-404.html" aria-expanded="false"><i
                                     class="mdi me-2 mdi-check-circle"></i><span class="hide-menu">Input

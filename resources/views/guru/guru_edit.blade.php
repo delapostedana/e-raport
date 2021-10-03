@@ -54,15 +54,34 @@
                         <span class="border-start border-info ps-3">No. Handphone <span
                                 class="text-danger">*</span></span></label>
                 </div>
+
                 <div class="form-floating mb-3">
+                    <select class="form-control border border-info" name="kelas" id="kelas" required>
+                        <option value="">-PILIH-</option>
+                        @foreach ($kelas_id as $klas)
+                            <option value="{{ $klas->id }}" @php
+                                if ($data->kelas_id == $klas->id) {
+                                    echo "selected";
+                                }
+                            @endphp >{{ $klas->nama_kelas }}</option>
+                        @endforeach
+                    </select>
+                    <label>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cast feather-sm text-info fill-white me-2"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path><line x1="2" y1="20" x2="2.01" y2="20"></line></svg>
+
+                        <span class="border-start border-info ps-3">Kelas <span
+                                class="text-danger">*</span></span></label>
+                </div>
+
+                <!-- <div class="form-floating mb-3">
                     <input type="text" class="form-control border border-info" placeholder="Wali kelas" name="kelas"
-                        required value="{{ $data->kelas }}">
+                        required value="{{ $data->kelas_id }}">
                     <label>
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cast feather-sm text-info fill-white me-2"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path><line x1="2" y1="20" x2="2.01" y2="20"></line></svg>
 
                         <span class="border-start border-info ps-3">Wali kelas <span
                                 class="text-danger">*</span></span></label>
-                </div>
+                </div> -->
 
                 <div class="d-md-flex align-items-center">
                     <div class="mt-3 mt-md-0 ms-auto">

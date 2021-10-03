@@ -1,0 +1,8 @@
+aktor = 3 (admin, guru, orang tua murid)
+siswa atribut = asal sekolah, lingkar kepala
+wali kelas? = 1 guru 1 kelas
+
+proses input rapot? =
+- guru yg input rapot
+- 1 kali rapot langsung lulus
+

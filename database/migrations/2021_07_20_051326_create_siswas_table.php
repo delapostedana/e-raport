@@ -20,9 +20,11 @@ class CreateSiswasTable extends Migration
             $table->string('nama_ayah');
             $table->string('nama_ibu');
             $table->string('no_hp');
-            $table->string('kelas');
+            $table->string('kelas_id');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
+            $table->string('asal_sekolah');
+            $table->string('lingkar_kepala');
             $table->timestamps();
         });
     }

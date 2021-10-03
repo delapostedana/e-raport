@@ -1,12 +1,12 @@
 @extends('layouts/main')
 
-@section('tittle','Tambah Guru')
+@section('tittle','Tambah Admin')
 
-@section('page-tittle','Tambah Guru')
+@section('page-tittle','Tambah Admin')
 
 @section('breadcrumb')
-<li class="breadcrumb-item"><a href="{{ route('guru') }}">Guru</a></li>
-<li class="breadcrumb-item active" aria-current="page">Tambah Guru</li>
+<li class="breadcrumb-item"><a href="{{ route('admin') }}">Admin</a></li>
+<li class="breadcrumb-item active" aria-current="page">Tambah Admin</li>
 @endsection
 
 
@@ -15,11 +15,11 @@
     <!-- column -->
     <div class="col-sm-12">
         <div class="card-body">
-            <h3 class="mb-4" style="color: #54667a"><i class="mdi me-2 mdi-file"></i> Form Tambah Guru</h3>
-            <form method="post" action="{{ url('guru/proses') }}">
+            <h3 class="mb-4" style="color: #54667a"><i class="mdi me-2 mdi-file"></i> Form Tambah Admin</h3>
+            <form method="post" action="{{ url('admin/proses') }}">
                 @csrf
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control border border-info" placeholder="Nama guru" name="nama"
+                    <input type="text" class="form-control border border-info" placeholder="Nama Admin" name="nama"
                         required>
                     <label>
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-sm text-info fill-white me-2">
@@ -27,12 +27,12 @@
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
 
-                        <span class="border-start border-info ps-3">Nama Guru <span
+                        <span class="border-start border-info ps-3">Nama admin <span
                                 class="text-danger">*</span></span></label>
                 </div>
                 <div class="form-floating mb-3">
                         <textarea name="alamat" id="" cols="30" rows="5" class="form-control border border-info" placeholder="Alamat" required></textarea>
-                        {{-- <input type="text" class="form-control border border-info" placeholder="Nama guru" name="alamat"
+                        {{-- <input type="text" class="form-control border border-info" placeholder="Nama admin" name="alamat"
                         required> --}}
                     <label>
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-sm text-info fill-white me-2">
@@ -52,19 +52,6 @@
                         </svg>
 
                         <span class="border-start border-info ps-3">No. Handphone <span
-                                class="text-danger">*</span></span></label>
-                </div>
-                <div class="form-floating mb-3">
-                    <select class="form-control border border-info" name="kelas" id="kelas" required>
-                        <option value="">-PILIH-</option>
-                        @foreach ($kelas as $data)
-                            <option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
-                        @endforeach
-                    </select>
-                    <label>
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cast feather-sm text-info fill-white me-2"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path><line x1="2" y1="20" x2="2.01" y2="20"></line></svg>
-
-                        <span class="border-start border-info ps-3">Wali Kelas <span
                                 class="text-danger">*</span></span></label>
                 </div>
 

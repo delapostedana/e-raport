@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    public function kelas(){
+        return $this->belongsTo("App\Kelas","kelas_id");
+    }
+
     use Notifiable;
 
     /**

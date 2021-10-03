@@ -32,8 +32,8 @@
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Alamat</th>
-                                <th>Nama Ayah</th>
-                                <th>Nama Ibu</th>
+                                <!-- <th>Nama Ayah</th>
+                                <th>Nama Ibu</th> -->
                                 <th>No. Handphone</th>
                                 <th>Kelas</th>
                                 <th style="width: 400px">Action</th>
@@ -47,11 +47,12 @@
                                 <td> {{ $data->tempat_lahir }}</td>
                                 <td> {{ $data->tanggal_lahir }}</td>
                                 <td> {{ $data->alamat }}</td>
-                                <td> {{ $data->nama_ayah }}</td>
-                                <td> {{ $data->nama_ibu }}</td>
+                                <!-- <td> {{ $data->nama_ayah }}</td>
+                                <td> {{ $data->nama_ibu }}</td> -->
                                 <td> {{ $data->no_hp }}</td>
                                 <td> {{ $data->kelas->nama_kelas }}</td>
                                 <td>
+                                    <a href="siswa/edit/{{ $data->id }}" class="btn btn-success text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail"><i class="mdi mdi-eye"></i> </a>
                                     <a href="siswa/edit/{{ $data->id }}" class="btn btn-warning text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil"></i> </a>
                                     <a href="siswa/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus"><i class="mdi mdi-delete"></i></a>
                                 </td>

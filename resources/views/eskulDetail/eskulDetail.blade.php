@@ -1,12 +1,13 @@
 @extends('layouts/main')
 
-@section('tittle','Eskul')
+@section('tittle','Eskul Detail')
 
-@section('page-tittle','Data Eskul')
+@section('page-tittle','Data Eskul Detail')
 
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="#">Kategori Penilaian</a></li>
-<li class="breadcrumb-item active" aria-current="page">Eskul</li>
+<li class="breadcrumb-item"><a href="{{ route('eskul') }}">Eskul</a></li>
+<li class="breadcrumb-item active" aria-current="page">Eskul Detail</li>
 @endsection
 
 
@@ -22,25 +23,24 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <a href="{{ url('eskul/add') }}" class="btn btn-primary mb-4"><i class="mdi mdi-plus"></i> Tambah</a>
+                <a href="add/{{ $idEskul }}" class="btn btn-primary mb-4"><i class="mdi mdi-plus"></i> Tambah</a>
                 <div class="table-responsive">
                     <table class="table user-table" id="table-datatables">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Eskul</th>
+                                <th>Nama Eskul Detail</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($eskul as $data)
+                            @foreach($eskulDetail as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td>
-                                    <a href="eskulDetail/{{ $data->id }}" class="btn btn-success text-white"><i class="mdi mdi-plus"></i> Eskul Detail</a>
-                                    <a href="eskul/edit/{{ $data->id }}" class="btn btn-warning text-white"><i class="mdi mdi-pencil"></i> Edit</a>
-                                    <a href="eskul/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="mdi mdi-delete"></i> Hapus</a>
+                                    <a href="edit/{{ $data->id }}" class="btn btn-warning text-white"><i class="mdi mdi-pencil"></i> Edit</a>
+                                    <a href="hapus/{{ $data->id }}/{{$data->eskul_id}}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="mdi mdi-delete"></i> Hapus</a>
                                 </td>
                             </tr>
                         @endforeach

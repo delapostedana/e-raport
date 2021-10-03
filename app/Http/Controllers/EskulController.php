@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Eskul;
 use App\EskulDetail;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
+// use App\Http\Controllers\Controller;
 
 class EskulController extends Controller
 {

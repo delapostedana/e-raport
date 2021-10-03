@@ -58,6 +58,32 @@
                                 class="text-danger">*</span></span></label>
                 </div>
                 <div class="form-floating mb-3">
+                    <input type="text" class="form-control border border-info" placeholder="Asal Sekolah" name="asal_sekolah"
+                        >
+                    <label>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-sm text-info fill-white me-2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+
+                        <span class="border-start border-info ps-3">Asal Sekolah</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control border border-info" placeholder="Lingkar Kepala" name="lingkar_kepala"
+                        required>
+                    <label>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-sm text-info fill-white me-2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="22" y1="12" x2="18" y2="12"></line>
+                        <line x1="6" y1="12" x2="2" y2="12"></line>
+                        <line x1="12" y1="6" x2="12" y2="2"></line>
+                        <line x1="12" y1="22" x2="12" y2="18"></line>
+                        </svg>
+
+                        <span class="border-start border-info ps-3">Lingkar Kepala (cm) <span
+                                class="text-danger">*</span></span></label>
+                </div>
+                <div class="form-floating mb-3">
                         <textarea name="alamat" id="" cols="30" rows="5" class="form-control border border-info" placeholder="Alamat" required></textarea>
                     <label>
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-sm text-info fill-white me-2">

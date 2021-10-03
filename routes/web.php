@@ -15,6 +15,13 @@ Route::get('/eskul/edit/{id}', 'EskulController@eskulEdit')->name('eskul.edit');
 Route::post('/eskul/update', 'EskulController@update')->name('eskul.update');
 Route::get('/eskul/hapus/{id}', 'EskulController@eskulHapus')->name('eskul.hapus');
 
+Route::get('/eskulDetail/{idEskul}', 'EskulDetailController@eskulDetail')->name('eskulDetail');
+Route::get('/eskulDetail/add/{idEskul}', 'EskulDetailController@eskulDetailTambah')->name('eskulDetail.add');
+Route::post('/eskulDetail/proses', 'EskulDetailController@prosesTambah')->name('eskulDetail.proses');
+Route::get('/eskulDetail/edit/{id}', 'EskulDetailController@eskulDetailEdit')->name('eskulDetail.edit');
+Route::post('/eskulDetail/update', 'EskulDetailController@update')->name('eskulDetail.update');
+Route::get('/eskulDetail/hapus/{id}/{idEskul}', 'EskulDetailController@eskulDetailHapus')->name('eskulDetail.hapus');
+
 Route::get('/hafalan', 'HafalanController@hafalan')->name('hafalan');
 Route::get('/hafalan/add', 'HafalanController@hafalanTambah')->name('hafalan.add');
 Route::post('/hafalan/proses', 'HafalanController@prosesTambah')->name('hafalan.proses');
@@ -49,3 +56,17 @@ Route::post('/siswa/proses', 'siswaController@prosesTambah')->name('siswa.proses
 Route::get('/siswa/edit/{id}', 'siswaController@siswaEdit')->name('siswa.edit');
 Route::post('/siswa/update', 'siswaController@update')->name('siswa.update');
 Route::get('/siswa/hapus/{id}', 'siswaController@siswaHapus')->name('siswa.hapus');
+
+Route::get('/admin', 'adminController@admin')->name('admin');
+Route::get('/admin/add', 'adminController@adminTambah')->name('admin.add');
+Route::post('/admin/proses', 'adminController@prosesTambah')->name('admin.proses');
+Route::get('/admin/edit/{id}', 'adminController@adminEdit')->name('admin.edit');
+Route::post('/admin/update', 'adminController@update')->name('admin.update');
+Route::get('/admin/hapus/{id}', 'adminController@adminHapus')->name('admin.hapus');
+
+Route::get('/raport', 'adminController@admin')->name('admin');
+Route::get('/raport/add', 'adminController@adminTambah')->name('admin.add');
+Route::post('/raport/proses', 'adminController@prosesTambah')->name('admin.proses');
+Route::get('/raport/edit/{id}', 'adminController@adminEdit')->name('admin.edit');
+Route::post('/raport/update', 'adminController@update')->name('admin.update');
+Route::get('/raport/hapus/{id}', 'adminController@adminHapus')->name('admin.hapus');

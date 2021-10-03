@@ -1,12 +1,12 @@
 @extends('layouts/main')
 
-@section('tittle','Guru')
+@section('tittle','Admin')
 
-@section('page-tittle','Data Guru')
+@section('page-tittle','Data Admin')
 
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-<li class="breadcrumb-item active" aria-current="page">Guru</li>
+<li class="breadcrumb-item active" aria-current="page">Admin</li>
 @endsection
 
 
@@ -22,13 +22,13 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <a href="{{ url('guru/add') }}" class="btn btn-primary mb-4"><i class="mdi mdi-plus"></i> Tambah</a>
+                <a href="{{ url('admin/add') }}" class="btn btn-primary mb-4"><i class="mdi mdi-plus"></i> Tambah</a>
                 <div class="table-responsive">
                     <table class="table user-table" id="table-datatables">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Guru</th>
+                                <th>Nama Admin</th>
                                 <th>Alamat</th>
                                 <th>No HP</th>
                                 <th>Wali Kelas</th>
@@ -36,17 +36,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($guru as $data)
+                            @foreach($admin as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td> {{ $data->alamat }}</td>
                                 <td> {{ $data->no_hp }}</td>
-                                <td> {{ $data->kelas->nama_kelas }}</td>
                                 <td>
                                     <a href="siswa/edit/{{ $data->id }}" class="btn btn-success text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail"><i class="mdi mdi-eye"></i> </a>
-                                    <a href="guru/edit/{{ $data->id }}" class="btn btn-warning text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil"></i> </a>
-                                    <a href="guru/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus"><i class="mdi mdi-delete"></i></a>
+                                    <a href="admin/edit/{{ $data->id }}" class="btn btn-warning text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil"></i> </a>
+                                    <a href="admin/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus"><i class="mdi mdi-delete"></i></a>
                                 </td>
                             </tr>
                         @endforeach
