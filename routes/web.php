@@ -29,12 +29,26 @@ Route::get('/hafalan/edit/{id}', 'HafalanController@hafalanEdit')->name('hafalan
 Route::post('/hafalan/update', 'HafalanController@update')->name('hafalan.update');
 Route::get('/hafalan/hapus/{id}', 'HafalanController@hafalanHapus')->name('hafalan.hapus');
 
+Route::get('/hafalanDetail/{idHafalan}', 'HafalanDetailController@hafalanDetail')->name('hafalanDetail');
+Route::get('/hafalanDetail/add/{idHafalan}', 'HafalanDetailController@hafalanDetailTambah')->name('hafalanDetail.add');
+Route::post('/hafalanDetail/proses', 'HafalanDetailController@prosesTambah')->name('hafalanDetail.proses');
+Route::get('/hafalanDetail/edit/{id}', 'HafalanDetailController@hafalanDetailEdit')->name('hafalanDetail.edit');
+Route::post('/hafalanDetail/update', 'HafalanDetailController@update')->name('hafalanDetail.update');
+Route::get('/hafalanDetail/hapus/{id}/{idHafalan}', 'HafalanDetailController@hafalanDetailHapus')->name('hafalanDetail.hapus');
+
 Route::get('/perkembangan', 'PerkembanganController@perkembangan')->name('perkembangan');
 Route::get('/perkembangan/add', 'PerkembanganController@perkembanganTambah')->name('perkembangan.add');
 Route::post('/perkembangan/proses', 'PerkembanganController@prosesTambah')->name('perkembangan.proses');
 Route::get('/perkembangan/edit/{id}', 'PerkembanganController@perkembanganEdit')->name('perkembangan.edit');
 Route::post('/perkembangan/update', 'PerkembanganController@update')->name('perkembangan.update');
 Route::get('/perkembangan/hapus/{id}', 'PerkembanganController@perkembanganHapus')->name('perkembangan.hapus');
+
+Route::get('/perkembanganDetail/{idPerkembangan}', 'PerkembanganDetailController@perkembanganDetail')->name('perkembanganDetail');
+Route::get('/perkembanganDetail/add/{idPerkembangan}', 'PerkembanganDetailController@perkembanganDetailTambah')->name('perkembanganDetail.add');
+Route::post('/perkembanganDetail/proses', 'PerkembanganDetailController@prosesTambah')->name('perkembanganDetail.proses');
+Route::get('/perkembanganDetail/edit/{id}', 'PerkembanganDetailController@perkembanganDetailEdit')->name('perkembanganDetail.edit');
+Route::post('/perkembanganDetail/update', 'PerkembanganDetailController@update')->name('perkembanganDetail.update');
+Route::get('/perkembanganDetail/hapus/{id}/{idPerkembangan}', 'PerkembanganDetailController@perkembanganDetailHapus')->name('perkembanganDetail.hapus');
 
 Route::get('/kelas', 'KelasController@kelas')->name('kelas');
 Route::get('/kelas/add', 'KelasController@kelasTambah')->name('kelas.add');

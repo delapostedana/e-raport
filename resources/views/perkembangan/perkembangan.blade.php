@@ -38,6 +38,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td>
+                                    <a href="perkembanganDetail/{{ $data->id }}" class="btn btn-success text-white"><i class="mdi mdi-plus"></i> Perkembangan Detail</a>
                                     <a href="perkembangan/edit/{{ $data->id }}" class="btn btn-warning text-white"><i class="mdi mdi-pencil"></i> Edit</a>
                                     <a href="perkembangan/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="mdi mdi-delete"></i> Hapus</a>
                                 </td>
