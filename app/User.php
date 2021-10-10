@@ -12,6 +12,10 @@ class User extends Authenticatable
         return $this->belongsTo("App\Kelas","kelas_id");
     }
 
+    public function raport(){
+        return $this->hasMany("App\raport","siswa_id");
+    }
+
     use Notifiable;
 
     /**
