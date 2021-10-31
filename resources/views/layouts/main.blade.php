@@ -208,23 +208,13 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('kelas') }}" aria-expanded="false"><i class="mdi me-2 mdi-cast"></i><span
                                     class="hide-menu">Kelas</span></a></li>
-                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('guru') }}" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-emoticon"></i><span class="hide-menu">Guru</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('siswa') }}" aria-expanded="false"><i class="mdi me-2 mdi-face"></i><span
-                                    class="hide-menu">Peserta Didik</span></a></li> -->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('raport') }}" aria-expanded="false"><i
                                     class="mdi me-2 mdi-check-circle"></i><span class="hide-menu">Input
                                     Raport</span></a>
                         </li>
-                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-chart-pie"></i><span class="hide-menu">Laporan</span></a>
-                        </li> -->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-error-404.html" aria-expanded="false"><i
+                                href="{{ route('raport.view') }}" aria-expanded="false"><i
                                     class="mdi me-2 mdi-book-open"></i><span class="hide-menu">Lihat Raport</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"

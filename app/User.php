@@ -13,7 +13,7 @@ class User extends Authenticatable
     }
 
     public function raport(){
-        return $this->hasMany("App\raport","siswa_id");
+        return $this->hasMany(raport::class,"siswa_id");
     }
 
     use Notifiable;

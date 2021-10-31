@@ -79,8 +79,18 @@ Route::post('/admin/update', 'adminController@update')->name('admin.update');
 Route::get('/admin/hapus/{id}', 'adminController@adminHapus')->name('admin.hapus');
 
 Route::get('/raport', 'raportController@siswa')->name('raport');
-Route::get('/raport/add', 'raportController@raport')->name('raport.add');
+Route::get('/raport/add/{idSiswa}', 'raportController@raport')->name('raport.add');
 Route::post('/raport/proses', 'raportController@prosesTambah')->name('raport.proses');
 Route::get('/raport/edit/{id}', 'raportController@raportEdit')->name('raport.edit');
-Route::post('/raport/update', 'raportController@update')->name('admin.update');
-Route::get('/raport/hapus/{id}', 'raportController@adminHapus')->name('admin.hapus');
+Route::post('/raport/update', 'raportController@updateDelete')->name('raport.update');
+
+Route::get('/raport', 'raportController@siswa')->name('raport');
+Route::get('/raport/add/{idSiswa}', 'raportController@raport')->name('raport.add');
+Route::post('/raport/proses', 'raportController@prosesTambah')->name('raport.proses');
+Route::get('/raport/edit/{id}', 'raportController@raportEdit')->name('raport.edit');
+Route::post('/raport/update', 'raportController@updateDelete')->name('raport.update');
+
+Route::get('/raport/view', 'raportController@raportView')->name('raport.view');
+Route::get('/raport/view/detail/{idSiswa}', 'raportController@raportViewDetail')->name('raport.view.detail');
+
+Route::get('/profile', 'profileController@index')->name('profile');
