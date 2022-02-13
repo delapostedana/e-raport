@@ -28,7 +28,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Nomor Induk</th>
                                 <th>Nama Guru</th>
+                                <th>Email</th>
                                 <th>Alamat</th>
                                 <th>No HP</th>
                                 <th>Wali Kelas</th>
@@ -39,7 +41,9 @@
                             @foreach($guru as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td> {{ $data->nomor_induk }}</td>
                                 <td> {{ $data->nama }}</td>
+                                <td> {{ $data->email }}</td>
                                 <td> {{ $data->alamat }}</td>
                                 <td> {{ $data->no_hp }}</td>
                                 <td> {{ $data->kelas->nama_kelas }}</td>

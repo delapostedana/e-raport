@@ -27,6 +27,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Nomor Induk</th>
                                 <th>Nama Peserta Didik</th>
                                 <th>Status Nilai</th>
                                 <th>Action</th>
@@ -36,6 +37,7 @@
                             @foreach($siswa as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td> {{ $data->nomor_induk }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td>
                                     @if($data->raport_count > 0)
@@ -43,8 +45,19 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="raport/add/{{ $data->id }}" class="btn btn-primary text-white"><i class="mdi mdi-plus"></i> Input Raport</a>
-                                    <a href="raport/edit/{{ $data->id }}" class="btn btn-warning text-white"><i class="mdi mdi-pencil"></i> Edit</a>
+                                <?php
+                                    if($data->raport_count > 0){
+                                ?>
+                                    <button class="btn btn-primary text-white" disabled><i class="mdi mdi-plus"></i> Input Raport</button>
+                                <?php
+                                    }
+                                else{
+                                ?>
+                                    <a href="{{ route('raport.add',$data->id) }}" class="btn btn-primary text-white"><i class="mdi mdi-plus"></i> Input Raport</a>
+                                <?php
+                                }
+                                ?>
+                                    <a href="{{ route('raport.edit',$data->id) }}" class="btn btn-warning text-white"><i class="mdi mdi-pencil"></i> Edit</a>
                                 </td>
                             </tr>
                         @endforeach

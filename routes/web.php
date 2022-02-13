@@ -1,19 +1,33 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
+
+Route::middleware('auth')->group(function () {
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard/index');
+});
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/eskul', 'EskulController@eskul')->name('eskul');
-Route::get('/eskul/add', 'EskulController@eskulTambah')->name('eskul.add');
-Route::post('/eskul/proses', 'EskulController@prosesTambah')->name('eskul.proses');
-Route::get('/eskul/edit/{id}', 'EskulController@eskulEdit')->name('eskul.edit');
-Route::post('/eskul/update', 'EskulController@update')->name('eskul.update');
-Route::get('/eskul/hapus/{id}', 'EskulController@eskulHapus')->name('eskul.hapus');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+Route::middleware(['auth', 'CekRole:1'])->group(function () {
+    Route::get('/eskul/add', 'EskulController@eskulTambah')->name('eskul.add');
+    Route::post('/eskul/proses', 'EskulController@prosesTambah')->name('eskul.proses');
+    Route::get('/eskul/edit/{id}', 'EskulController@eskulEdit')->name('eskul.edit');
+    Route::post('/eskul/update', 'EskulController@update')->name('eskul.update');
+    Route::get('/eskul/hapus/{id}', 'EskulController@eskulHapus')->name('eskul.hapus');
+});
+
+Route::middleware(['auth', 'CekRole:1,2'])->group(function () {
+    Route::get('/eskul', 'EskulController@eskul')->name('eskul');
+});
 
 Route::get('/eskulDetail/{idEskul}', 'EskulDetailController@eskulDetail')->name('eskulDetail');
 Route::get('/eskulDetail/add/{idEskul}', 'EskulDetailController@eskulDetailTambah')->name('eskulDetail.add');
@@ -78,19 +92,14 @@ Route::get('/admin/edit/{id}', 'adminController@adminEdit')->name('admin.edit');
 Route::post('/admin/update', 'adminController@update')->name('admin.update');
 Route::get('/admin/hapus/{id}', 'adminController@adminHapus')->name('admin.hapus');
 
-Route::get('/raport', 'raportController@siswa')->name('raport');
+Route::get('/raport/{id}', 'raportController@siswa')->name('raport');
 Route::get('/raport/add/{idSiswa}', 'raportController@raport')->name('raport.add');
 Route::post('/raport/proses', 'raportController@prosesTambah')->name('raport.proses');
 Route::get('/raport/edit/{id}', 'raportController@raportEdit')->name('raport.edit');
 Route::post('/raport/update', 'raportController@updateDelete')->name('raport.update');
 
-Route::get('/raport', 'raportController@siswa')->name('raport');
-Route::get('/raport/add/{idSiswa}', 'raportController@raport')->name('raport.add');
-Route::post('/raport/proses', 'raportController@prosesTambah')->name('raport.proses');
-Route::get('/raport/edit/{id}', 'raportController@raportEdit')->name('raport.edit');
-Route::post('/raport/update', 'raportController@updateDelete')->name('raport.update');
-
-Route::get('/raport/view', 'raportController@raportView')->name('raport.view');
+Route::get('/raport/view/{id}', 'raportController@raportView')->name('raport.view');
 Route::get('/raport/view/detail/{idSiswa}', 'raportController@raportViewDetail')->name('raport.view.detail');
 
 Route::get('/profile', 'profileController@index')->name('profile');
+Route::post('/profile/update', 'profileController@update')->name('profile.update');

@@ -31,7 +31,12 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td>
-                                    <a href="view/detail/{{ $data->id }}" class="btn btn-primary text-white"><i class="mdi mdi-eye"></i> Lihat Raport</a>
+                                @if($data->raport_count > 0)
+                                    <a href="{{ route('raport.view.detail',$data->id) }}" class="btn btn-primary text-white"><i class="mdi mdi-eye"></i> Lihat Raport</a>
+                                @else
+                                <span class="text-danger"><strong><i class="mdi mdi-minus-circle"></i> RAPORT BELUM DI INPUT</strong></span>
+                                @endif
+
                                 </td>
                             </tr>
                         @endforeach

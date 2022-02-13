@@ -21,10 +21,6 @@
         rel="stylesheet">
     <!--This page css - Morris CSS -->
     <link href="{{ asset('/assets/plugins/c3-master/c3.min.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
-    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/> --}}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
@@ -52,7 +48,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand ms-4" href="index.html">
+                    <a class="navbar-brand ms-4" href="{{ route('dashboard') }}">
                         <!-- Logo icon -->
                         <b class="logo-icon text-white">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -64,7 +60,6 @@
                         <span class="logo-text text-white">
                             e-<b>Raport</b>
                             <!-- dark Logo text -->
-                            <!-- <img src="../assets/images/logo-light-text.png" alt="homepage" class="dark-logo" /> -->
 
                         </span>
                     </a>
@@ -110,19 +105,32 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#"
                                 id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('/assets/images/users/1.jpg') }}"
-                                    alt="user" class="profile-pic me-2">Bang Imron
+
+                                <img src="{{ asset('/assets/images/users/') }}/{{ Auth::user()->foto }}"
+                                    alt="user" class="profile-pic me-2">{{ Auth::user()->nama }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end user-dd animated flipInY">
                                 <div class="d-flex no-block align-items-center p-3 bg-info text-white mb-2">
-                                    <div class=""><img src="../assets/images/users/1.jpg" alt="user"
+                                    <div class=""><img src="{{ asset('/assets/images/users/') }}/{{ Auth::user()->foto }}" alt="user"
                                             class="rounded-circle" width="60"></div>
                                     <div class="ms-2">
-                                        <h4 class="mb-0 text-white">Bang Imron</h4>
-                                        <p class=" mb-0">Admin</p>
+                                        <h4 class="mb-0 text-white">{{ Auth::user()->nama }}</h4>
+                                        <p class=" mb-0">
+                                            <?php
+                                                if(Auth::user()->role_id == 1){
+                                                    echo "Admin";
+                                                }
+                                                elseif(Auth::user()->role_id == 2){
+                                                    echo "Guru";
+                                                }
+                                                else{
+                                                    echo "Siswa";
+                                                }
+                                            ?>
+                                        </p>
                                     </div>
                                 </div>
-                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                <a class="dropdown-item" href="{{ route('profile') }}"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                         class="feather feather-user feather-sm text-info me-1 ms-1">
@@ -131,16 +139,25 @@
                                     </svg> My
                                     Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                    <div>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form-lagi').submit();"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                         class="feather feather-log-out feather-sm text-danger me-1 ms-1">
                                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                         <polyline points="16 17 21 12 16 7"></polyline>
                                         <line x1="21" y1="12" x2="9" y2="12"></line>
-                                    </svg> Logout</a>
+                                    </svg> Logout</span>
+                                        </a>
+
+                                        <form id="logout-form-lagi" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
                                 <div class="dropdown-divider"></div>
-                                <div class="pl-4 p-2"><a href="#" class="btn d-block w-100 btn-info rounded-pill">View
+                                <div class="pl-4 p-2"><a href="{{ route('profile') }}" class="text-white btn d-block w-100 btn-info rounded-pill">View
                                         Profile</a></div>
                             </div>
                         </li>
@@ -162,10 +179,10 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
+                                href="{{ route('dashboard') }}" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.html" aria-expanded="false">
+                                href="{{ route('profile') }}" aria-expanded="false">
                                 <i class="mdi me-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
@@ -187,8 +204,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book"></i><span
-                                    class="hide-menu">Kategori Penilaian
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book"></i> <span class="hide-menu"> Kategori Penilaian
                                 </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item"><a href="{{ route('eskul') }}"
@@ -208,19 +224,33 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('kelas') }}" aria-expanded="false"><i class="mdi me-2 mdi-cast"></i><span
                                     class="hide-menu">Kelas</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('raport') }}" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-check-circle"></i><span class="hide-menu">Input
-                                    Raport</span></a>
+
+                        <li class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    href="{{ route('raport', Auth::user()->kelas_id) }}" aria-expanded="false"><i
+                                    class="mdi me-2 mdi-check-circle"></i><span class="hide-menu">
+                                    Input Raport</span>
+                                </a>
                         </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('raport.view') }}" aria-expanded="false"><i
+                                href="{{ route('raport.view', Auth::user()->id) }}" aria-expanded="false"><i
                                     class="mdi me-2 mdi-book-open"></i><span class="hide-menu">Lihat Raport</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                            href="pages-error-404.html" aria-expanded="false"><i
-                                class="mdi me-2 mdi-logout"></i><span class="hide-menu">Logout</span></a>
-                    </li>
+                        <li class="sidebar-item">
+
+                        <div>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"><i
+                                class="mdi me-2 mdi-logout"></i><span class="hide-menu">Logout</span>
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                        </li>
                     </ul>
 
                 </nav>
@@ -231,21 +261,9 @@
                 <div class="row">
                     <div class="col-12 link-wrap">
 
-                        Bang Imron <br>
-                        Admin
-                        <!-- item-->
-                        <!-- <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i
-                                class="ti-settings"></i></a>
-                    </div>
-                    <div class="col-4 link-wrap"> -->
-                        <!-- item-->
-                        <!-- <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i
-                                class="mdi mdi-gmail"></i></a>
-                    </div>
-                    <div class="col-4 link-wrap"> -->
-                        <!-- item-->
-                        <!-- <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
-                                class="mdi mdi-power"></i></a> -->
+                        {{ Auth::user()->nama }} <br>
+                        {{ Auth::user()->nomor_induk }}
+
                     </div>
                 </div>
             </div>

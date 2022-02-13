@@ -28,10 +28,11 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>No Induk</th>
                                 <th>Nama Admin</th>
+                                <th>Email</th>
                                 <th>Alamat</th>
                                 <th>No HP</th>
-                                <th>Wali Kelas</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -39,7 +40,9 @@
                             @foreach($admin as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td> {{ $data->nomor_induk }}</td>
                                 <td> {{ $data->nama }}</td>
+                                <td> {{ $data->email }}</td>
                                 <td> {{ $data->alamat }}</td>
                                 <td> {{ $data->no_hp }}</td>
                                 <td>

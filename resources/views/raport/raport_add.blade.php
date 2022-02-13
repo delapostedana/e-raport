@@ -26,7 +26,7 @@
                 <tr>
                     <td>Nomor Induk</td>
                     <td class="pr-2 pl-2">:</td>
-                    <td></td>
+                    <td>{{$siswa->nomor_induk}}</td>
                 </tr>
                 <tr>
                     <td>Kelas</td>

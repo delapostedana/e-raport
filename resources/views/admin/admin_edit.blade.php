@@ -32,6 +32,27 @@
                         <span class="border-start border-info ps-3">Nama Admin <span
                                 class="text-danger">*</span></span></label>
                 </div>
+                {{-- <div class="form-floating mb-3">
+                    <input type="text" class="form-control border border-info" placeholder="Email admin" name="email"
+                        required value="{{ $data->email }}">
+                    <label>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="feather-sm text-info fill-white me-2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+
+                        <span class="border-start border-info ps-3">Email Admin <span
+                                class="text-danger">*</span></span></label>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                </div> --}}
                 <div class="form-floating mb-3">
                         <textarea name="alamat" id="" cols="30" rows="5" class="form-control border border-info" placeholder="Alamat" required >{{ $data->alamat }}</textarea>
                     <label>

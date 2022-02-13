@@ -16,10 +16,11 @@ use App\Perkembangan_detail;
 
 class RaportController extends Controller
 {
-    public function siswa(){
+    public function siswa($id){
         $siswa = DB::table('users')
         ->selectRaw('users.*, ( SELECT COUNT(*) FROM raports WHERE siswa_id = users.id ) AS raport_count')
         ->where('role_id',3)
+        ->where('kelas_id',$id)
         ->get();
 
         return view( 'raport/raport', [
@@ -151,11 +152,15 @@ class RaportController extends Controller
     }
 
 
+
+
+
     // RAPORT VIEW
 
-    public function raportView(){
+    public function raportView($id){
         $siswa = DB::table('users')
-        ->where('id',9)
+        ->selectRaw('users.*, ( SELECT COUNT(*) FROM raports WHERE siswa_id = users.id ) AS raport_count')
+        ->where('id',$id)
         ->get();
 
         return view( 'raport/raport_view', [

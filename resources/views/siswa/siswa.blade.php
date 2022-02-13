@@ -28,27 +28,25 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Peserta Didik</th>
+                                <th>Nomor Induk</th>
+                                <th>Nama </th>
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Alamat</th>
-                                <!-- <th>Nama Ayah</th>
-                                <th>Nama Ibu</th> -->
                                 <th>No. Handphone</th>
                                 <th>Kelas</th>
-                                <th style="width: 400px">Action</th>
+                                <th style="width: 500px">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($siswa as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td> {{ $data->nomor_induk }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td> {{ $data->tempat_lahir }}</td>
                                 <td> {{ $data->tanggal_lahir }}</td>
                                 <td> {{ $data->alamat }}</td>
-                                <!-- <td> {{ $data->nama_ayah }}</td>
-                                <td> {{ $data->nama_ibu }}</td> -->
                                 <td> {{ $data->no_hp }}</td>
                                 <td> {{ $data->kelas->nama_kelas }}</td>
                                 <td>
