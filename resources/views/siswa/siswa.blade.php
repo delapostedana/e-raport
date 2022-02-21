@@ -22,7 +22,9 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
+            @if (auth()->user()->role_id == 1)
                 <a href="{{ url('siswa/add') }}" class="btn btn-primary mb-4"><i class="mdi mdi-plus"></i> Tambah</a>
+            @endif
                 <div class="table-responsive">
                     <table class="table user-table" id="table-datatables">
                         <thead>
@@ -35,7 +37,9 @@
                                 <th>Alamat</th>
                                 <th>No. Handphone</th>
                                 <th>Kelas</th>
-                                <th style="width: 500px">Action</th>
+                                @if (auth()->user()->role_id == 1)
+                                    <th style="width: 500px">Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -49,11 +53,13 @@
                                 <td> {{ $data->alamat }}</td>
                                 <td> {{ $data->no_hp }}</td>
                                 <td> {{ $data->kelas->nama_kelas }}</td>
-                                <td>
-                                    <a href="siswa/edit/{{ $data->id }}" class="btn btn-success text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail"><i class="mdi mdi-eye"></i> </a>
-                                    <a href="siswa/edit/{{ $data->id }}" class="btn btn-warning text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil"></i> </a>
-                                    <a href="siswa/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus"><i class="mdi mdi-delete"></i></a>
-                                </td>
+                                @if (auth()->user()->role_id == 1)
+                                    <td>
+                                        <a href="siswa/edit/{{ $data->id }}" class="btn btn-success text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Detail"><i class="mdi mdi-eye"></i> </a>
+                                        <a href="siswa/edit/{{ $data->id }}" class="btn btn-warning text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="mdi mdi-pencil"></i> </a>
+                                        <a href="siswa/hapus/{{ $data->id }}" class="btn btn-danger text-white" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus"><i class="mdi mdi-delete"></i></a>
+                                    </td>
+                                @endif
                             </tr>
                         @endforeach
                         </tbody>

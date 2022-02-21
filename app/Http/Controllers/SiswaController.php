@@ -15,8 +15,6 @@ use Carbon;
 class SiswaController extends Controller
 {
     public function siswa(){
-        // $siswa = Siswa::all();
-        // return view('siswa/siswa', compact('siswa'));
         $siswa = User::where('role_id', '3')->get();
         return view('siswa/siswa', compact('siswa'));
     }

@@ -21,6 +21,10 @@
         rel="stylesheet">
     <!--This page css - Morris CSS -->
     <link href="{{ asset('/assets/plugins/c3-master/c3.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
@@ -185,9 +189,10 @@
                                 href="{{ route('profile') }}" aria-expanded="false">
                                 <i class="mdi me-2 mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </li>
+                        @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="mdi me-2 mdi-account-plus"></i><span
-                                    class="hide-menu">Tambah User
+                                    class="hide-menu"> User
                                 </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item"><a href="{{ route('admin') }}"
@@ -224,19 +229,24 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('kelas') }}" aria-expanded="false"><i class="mdi me-2 mdi-cast"></i><span
                                     class="hide-menu">Kelas</span></a></li>
+                        @endif
 
-                        <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                    href="{{ route('raport', Auth::user()->kelas_id) }}" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-check-circle"></i><span class="hide-menu">
-                                    Input Raport</span>
-                                </a>
-                        </li>
+                        @if (auth()->user()->role_id == 2)
+                            <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        href="{{ route('raport', Auth::user()->kelas_id) }}" aria-expanded="false"><i
+                                        class="mdi me-2 mdi-check-circle"></i><span class="hide-menu">
+                                        Input Raport</span>
+                                    </a>
+                            </li>
+                        @endif
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('raport.view', Auth::user()->id) }}" aria-expanded="false"><i
-                                    class="mdi me-2 mdi-book-open"></i><span class="hide-menu">Lihat Raport</span></a>
-                        </li>
+                        @if (auth()->user()->role_id == 3)
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    href="{{ route('raport.view', Auth::user()->id) }}" aria-expanded="false"><i
+                                        class="mdi me-2 mdi-book-open"></i><span class="hide-menu">Lihat Raport</span></a>
+                            </li>
+                        @endif
                         <li class="sidebar-item">
 
                         <div>

@@ -13,6 +13,7 @@ use App\Hafalan;
 use App\Hafalan_detail;
 use App\perkembangan;
 use App\Perkembangan_detail;
+use PDF;
 
 class RaportController extends Controller
 {
@@ -169,6 +170,7 @@ class RaportController extends Controller
     }
 
     public function raportViewDetail($idSiswa){
+
         $siswa = User::find($idSiswa);
         $raportSiswa = $siswa->raport;
         $eskul = Eskul::with('detail')->get();
@@ -235,5 +237,85 @@ class RaportController extends Controller
             'eskulCheckeds'         => $eskulChecked,
             'perkembanganCheckeds'  => $perkembanganChecked,
             ] );
+    }
+
+    public function raportPDF($idSiswa){
+        $siswa = User::find($idSiswa);
+        $raportSiswa = $siswa->raport;
+        $eskul = Eskul::with('detail')->get();
+        $hafalan = Hafalan::with('detail')->get();
+        $perkembangan = perkembangan::with('detail')->get();
+
+        $hafalanChecked = [
+            [
+                'key'   => '1',
+                'value' => 'Sudah Hafal'
+            ],
+            [
+                'key'   => '2',
+                'value' => 'Mulai Hafal'
+            ],
+            [
+                'key'   => '3',
+                'value' => 'Belum Hafal'
+            ]
+        ];
+        $eskulChecked = [
+            [
+                'key'   => '1',
+                'value' => 'A'
+            ],
+            [
+                'key'   => '2',
+                'value' => 'B'
+            ],
+            [
+                'key'   => '3',
+                'value' => 'C'
+            ],
+            [
+                'key'   => '4',
+                'value' => 'D'
+            ]
+        ];
+        $perkembanganChecked = [
+            [
+                'key'   => '1',
+                'value' => 'BB'
+            ],
+            [
+                'key'   => '2',
+                'value' => 'MB'
+            ],
+            [
+                'key'   => '3',
+                'value' => 'BSH'
+            ],
+            [
+                'key'   => '4',
+                'value' => 'BSB'
+            ]
+        ];
+
+            $pdf = PDF::loadView('pdf/document', [
+                'eskuls'                => $eskul,
+                'hafalans'              => $hafalan,
+                'perkembangans'         => $perkembangan,
+                'siswas'                => $siswa,
+                'raportSiswas'          => $raportSiswa,
+                'hafalanCheckeds'       => $hafalanChecked,
+                'eskulCheckeds'         => $eskulChecked,
+                'perkembanganCheckeds'  => $perkembanganChecked,
+                ]);
+            return $pdf->stream('document.pdf');
+
+        // return [
+        //     'format'           => 'A4', // See https://mpdf.github.io/paging/page-size-orientation.html
+        //     'author'           => 'John Doe',
+        //     'subject'          => 'This Document will explain the whole universe.',
+        //     'keywords'         => 'PDF, Laravel, Package, Peace', // Separate values with comma
+        //     'creator'          => 'Laravel Pdf',
+        //     'display_mode'     => 'fullpage'
+        // ];
     }
 }

@@ -33,10 +33,10 @@
                             <div class="card-body" style="box-shadow:20px 20px 50px grey; ">
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
-                                    <div class="text-center text-secondary mb-4">Masukkan nomor induk dan password</div>
+                                    <div class="text-center text-secondary mb-4">Masukkan email dan password</div>
 
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Induk') }}</label>
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

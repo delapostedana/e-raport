@@ -48,6 +48,7 @@ class AdminController extends Controller
                 'role_id'       => 1,
                 'nomor_induk'   => $no_induk,
                 'email'         => $request->email,
+                'kelas_id'      => 0,
                 'password'      => Hash::make(12345678),
                 'foto'          => "default.png",
             )

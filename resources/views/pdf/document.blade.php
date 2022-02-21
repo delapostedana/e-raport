@@ -1,25 +1,28 @@
-@extends('layouts/main')
-
-@section('tittle','Raport Detail')
-
-@section('page-tittle','Raport Detail')
-
-@section('breadcrumb')
-<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-<li class="breadcrumb-item active" aria-current="page">Raport Detail</li>
-@endsection
-
-
-@section('content')
-
-<div class="row">
+<html>
+<head>
+<title>E-Raport</title>
+<style>
+    @page {
+	header: page-header;
+}
+</style>
+</head>
+<body>
+<htmlpageheader name="page-header">
+	<div>
+        <?php
+            date_default_timezone_set('Asia/Jakarta');
+        ?>
+        <p style="color: gray; text-align:right">E-Raport - {{ now() }}</p>
+    </div>
+</htmlpageheader>
+    <div class="row">
     <!-- column -->
     <div class="col-sm-12">
         <div class="card-body bg-white">
-            <h3 class="mb-4" style="color: #54667a"><i class="mdi me-2 mdi-file"></i> Raport Detail</h3>
-            <a href="{{ route('raport.pdf', Auth::user()->id) }}" target="_BLANK" class="btn btn-primary float-right">Dowload PDF</a>
+            <h3 class="mb-4" style="color: #54667a; text-align:center"><i class="mdi me-2 mdi-file"></i> E-Raport</h3>
 
-            <table class="mb-2">
+            <table class="mb-2 bg-primary">
 
                 <tr>
                     <td>Nama Peserta Didik</td>
@@ -177,4 +180,7 @@
         </div>
     </div>
 </div>
-@endsection
+
+
+</body>
+</html>
