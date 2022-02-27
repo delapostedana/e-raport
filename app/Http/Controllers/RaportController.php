@@ -44,11 +44,14 @@ class RaportController extends Controller
 
     public function prosesTambah(Request $request){
         $idSiswa = $request->idSiswa;
+        $idDosen = $request->idDosen;
+        $idKelas = $request->idKelas;
+
         foreach($request->eskul as $id_detailEskul => $nilaiEskul){
             $eskulDetail = EskulDetail::find($id_detailEskul);
             $eskulDetail->raport()->create(
                 [
-                    "guru_id" => 1,
+                    "guru_id" => $idDosen,
                     "siswa_id" => $idSiswa,
                     "nilai" => $nilaiEskul,
                 ]
@@ -58,7 +61,7 @@ class RaportController extends Controller
             $hafalanDetail = Hafalan_detail::find($id_detailHafalan);
             $hafalanDetail->raport()->create(
                 [
-                    "guru_id" => 1,
+                    "guru_id" => $idDosen,
                     "siswa_id" => $idSiswa,
                     "nilai" => $nilaiHafalan,
                 ]
@@ -68,13 +71,13 @@ class RaportController extends Controller
             $perkembanganDetail = Perkembangan_detail::find($id_detailPerkembangan);
             $perkembanganDetail->raport()->create(
                 [
-                    "guru_id" => 1,
+                    "guru_id" => $idDosen,
                     "siswa_id" => $idSiswa,
                     "nilai" => $nilaiPerkembangan,
                 ]
             );
         }
-        return redirect('raport')->with('status','Data berhasil ditambahkan');
+        return redirect('raport/'.$idKelas )->with('status','Data berhasil ditambahkan');
     }
 
     public function raportEdit($idSiswa){
@@ -147,9 +150,10 @@ class RaportController extends Controller
     }
     public function updateDelete(Request $request){
         $idSiswa = $request->idSiswa;
+        $idKelas = $request->idKelas;
         raport::where('siswa_id', $idSiswa)->delete();
         $this->prosesTambah($request);
-        return redirect('raport')->with('status','Data berhasil diedit');
+        return redirect('raport/'.$idKelas)->with('status','Data berhasil diedit');
     }
 
 

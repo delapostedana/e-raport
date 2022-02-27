@@ -198,6 +198,8 @@
                     </ul>
                 </div>
                 <input type="hidden" name="idSiswa" value="{{ $siswas->id }}">
+                <input type="hidden" name="idDosen" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="idKelas" value="{{ Auth::user()->kelas_id }}">
 
                 <div class="d-md-flex align-items-center">
                     <div class="mt-3 mt-md-0 ms-auto">
